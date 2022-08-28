@@ -43,7 +43,7 @@ public class ControlJuguete {
         toyService.modificarExistencia(cantidades,nombre);
     }
     public void restarexistencias(){
-        int cantidades = Integer.parseInt(JOptionPane.showInputDialog("Ingrese las cantidades que desea añadir"));
+        int cantidades = Integer.parseInt(JOptionPane.showInputDialog("Ingrese las cantidades que desea restar"));
         String nombre = JOptionPane.showInputDialog("Que juguete desea modificar");
         toyService.modificarExistencia(-cantidades,nombre);
     }

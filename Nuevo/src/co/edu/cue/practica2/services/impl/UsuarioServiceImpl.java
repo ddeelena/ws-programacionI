@@ -58,7 +58,7 @@ public class UsuarioServiceImpl implements Usuario {
         for(int i=0; i<empleados.length;i++){
             if(empleados[i]==null){
                 empleados[i] = new Empleado(nombre,cedula,telefono,direccion,experiencia,salario);
-                JOptionPane.showMessageDialog(null,"Se agrego al proveedro con exito");
+                JOptionPane.showMessageDialog(null,"Se agrego el empleado con exito");
             }else{
                 if(i==empleados.length-1){
                     JOptionPane.showMessageDialog(null,"No se puede agregar más empleados");

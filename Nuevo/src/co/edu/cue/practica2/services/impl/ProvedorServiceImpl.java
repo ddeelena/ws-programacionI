@@ -24,15 +24,15 @@ public class ProvedorServiceImpl implements Venta {
         String codigoProve = JOptionPane.showInputDialog(cadena +" Ingrese el codigo");
         for(int i=0; i< proveedores.length;i++){
             if(String.valueOf(proveedores[i])!="null" && codigoProve.equals(proveedores[i].getCodigo())){
-                String nombreJuguete= JOptionPane.showInputDialog("Ingrse el nombre del juguete que desea comprar");
+                String nombreJuguete= JOptionPane.showInputDialog("Ingrese el nombre del juguete que desea comprar");
                 for(Juguete toy: juguetes){
                     if(String.valueOf(toy)!="null" && nombreJuguete.equals(toy.getNombre())){
                         int canti = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad a comprar"));
                         JOptionPane.showMessageDialog(null,"Su compar fue realizada con exito");
                         toy.setCantidad(toy.getCantidad());
                         exist=true;
-                        System.out.println("Su compra de: "+canti+" de "+nombreJuguete+"fue exitosa"+
-                                "\n y tuvo un valor de "+(toy.getPrecio()*canti)+canti*1000);
+                        System.out.println("Su compra de: "+canti+"  "+nombreJuguete+"fue exitosa"+
+                                "\n y tuvo un valor de "+((toy.getPrecio()*canti)-canti*1000));
                     }
                 }
                 if(exist==false){
@@ -63,7 +63,7 @@ public class ProvedorServiceImpl implements Venta {
                 double precio=(Math.random()*(7000 - 1000+1)+1000);
                 int canti = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad a comprar"));
                 juguetes[i]= new Juguete(nombreJuguete,precio,canti,proveedores[j].getMaterial());
-                System.out.println("Su compra de: "+canti+" de "+nombreJuguete+" fue exitosa \n subtotal de la compra: "+precio
+                System.out.println("Su compra de: "+nombreJuguete+" x "+canti+" fue exitosa \n subtotal de la compra: "+precio
                 +"En su tienda quedo con precio de "+precio+1000);
                 JOptionPane.showMessageDialog(null,juguetes[i].getNombre());
                 break;

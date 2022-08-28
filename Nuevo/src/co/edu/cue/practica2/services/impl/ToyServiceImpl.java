@@ -42,13 +42,12 @@ public class ToyServiceImpl implements Toy {
     public Juguete modificarExistencia( int cantidades, String nombre) {
         for (Juguete toy : toys) {
             if (String.valueOf(toy) != "null" && toy.getNombre().equals(nombre)) {
-                if(toy.getCantidad()>cantidades){
+                if(toy.getCantidad()>cantidades ){
                     toy.setCantidad(toy.getCantidad()+(cantidades));
-                }else{
-                    JOptionPane.showMessageDialog(null,"No hay esa cantidad disponible, ingrese una cantidad menor");
+                }else if(cantidades<0){
+                        JOptionPane.showMessageDialog(null,"No hay esa cantidad disponible, ingrese una cantidad menor");
                 }
                 JOptionPane.showMessageDialog(null, "Quedaron " + toy.getCantidad() + " cantidades");
-
             }
         }
         return null;

@@ -42,7 +42,7 @@ public class SellServiceImpl implements Sell {
             }
         }
         if(detalle.length==0 && detalle[0]==null){
-            JOptionPane.showMessageDialog(null,"No se pudo realizar la compra, revise que haya ingresado bien ek nombre del juguete");
+            JOptionPane.showMessageDialog(null,"No se pudo realizar la compra, revise que haya ingresado bien el nombre del juguete");
         }else {
             Venta venta = new Venta(detalle, nombreUsuario, nombreVendedor,diasSolicitado);
             ventas[contadorVenta]=venta;
@@ -65,11 +65,11 @@ public class SellServiceImpl implements Sell {
             if(venta.getDetalle()[i] != null){
                 System.out.println("\n JUGUETE: "+venta.getDetalle()[i].getJuguete().getNombre());
                 if(venta.getDetalle()[i].getJuguete().getMaterial().equals("Plastico")){
-                    System.out.println("MATERIAL: Plastico \n Este material requiere");
+                    System.out.println("MATERIAL: Plastico  (Este juguete no requiere cuidados especiales)");
                 } else if (venta.getDetalle()[i].getJuguete().getMaterial().equals("Tela")) {
-                    System.out.println("MATERIAL: Tela \n Este material no se puede mojar");
+                    System.out.println("MATERIAL: Tela (Este juguete no se puede mojar)");
                 } else if (venta.getDetalle()[i].getJuguete().getMaterial().equals("Electronico")) {
-                    System.out.println("MATERIAL: Electronico \n No requiere");
+                    System.out.println("MATERIAL: Electronico (Este juguete no debe ser mojado y requiere baterias)");
                 }
                 System.out.println("\n Cantidad "+venta.getDetalle()[i].getCantidad());
                 total += venta.getDetalle()[i].getSubtotal();
